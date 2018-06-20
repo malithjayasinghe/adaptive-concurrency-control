@@ -1,3 +1,5 @@
-Adpative conurrency control POC
+Adpative Conurrency Control POC
 
-Based on the optimal thread pool size computed the numbers of threads are reducded/increased.
+-  Dynamically adjusts the thread pool size based on a calculated value 
+
+
