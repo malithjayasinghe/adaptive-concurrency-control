@@ -14,7 +14,6 @@ public class CustomThreadPool {
     private TimeUnit timeUnit = TimeUnit.SECONDS;
     private ThreadPoolExecutor executor;
 
-
     /**
      * The constructor
      *
@@ -22,7 +21,7 @@ public class CustomThreadPool {
      */
     public CustomThreadPool(int poolSize) {
 
-        executor = new ThreadPoolExecutor(poolSize, poolSize + 1, KEEP_ALIVE_TIME, timeUnit,
+        executor = new ThreadPoolExecutor(poolSize, poolSize, KEEP_ALIVE_TIME, timeUnit,
                 new LinkedBlockingQueue<Runnable>(),
                 new ThreadPoolExecutor.CallerRunsPolicy());
     }
@@ -50,7 +49,7 @@ public class CustomThreadPool {
      */
     public void setPoolSize(int poolSize) {
         executor.setCorePoolSize(poolSize);
-        executor.setMaximumPoolSize(poolSize + 1);
+        executor.setMaximumPoolSize(poolSize);
     }
 
     /**
@@ -82,8 +81,8 @@ public class CustomThreadPool {
      * @param n the number to increment by
      */
     public void decrementPoolSizeBy(int n) {
-        executor.setMaximumPoolSize(executor.getMaximumPoolSize() + n);
-        executor.setCorePoolSize(executor.getCorePoolSize() + n);
+        executor.setMaximumPoolSize(executor.getMaximumPoolSize() - n);
+        executor.setCorePoolSize(executor.getCorePoolSize() - n);
     }
 
     @Override

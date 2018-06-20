@@ -5,7 +5,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * The sumbits the task to be exectued by the thread pool
+ * Sumbits the task to be exectued by the thread pool
  */
 public class TaskScheduler {
 
@@ -14,7 +14,7 @@ public class TaskScheduler {
     private final static int THREAD_POOL_MODIFICATION_PERIOD = 10;
 
     /**
-     * Main entry point
+     * Entry point
      */
     public static void main(String args[]) {
         ScheduledExecutorService threadPoolSizeModifier = Executors.newScheduledThreadPool(1);

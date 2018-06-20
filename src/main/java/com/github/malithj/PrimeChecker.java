@@ -27,12 +27,12 @@ public class PrimeChecker implements Runnable {
     }
 
     /**
-     * Check if a given number if prime or no
+     * Check if a given number if prime or not
      *
      * @param n the number to be checked for prieme
      * @return true if prime false otherwsie
      */
-    boolean isPrime(int n) {
+    private boolean isPrime(int n) {
         //check if n is a multiple of 2
         if (n % 2 == 0) return false;
         //if not, then just check the odds

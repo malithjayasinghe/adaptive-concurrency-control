@@ -1,5 +1,8 @@
 package com.github.malithj;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 /**
  * Update the thread pool size
  */
@@ -22,8 +25,9 @@ public class ThreadPoolSizeUpdater implements Runnable {
     @Override
     public void run() {
         int optimalNumberOfThreads = optimizer.getOptimalNumberOfThreads();
-        System.out.println("set = " + optimalNumberOfThreads + "\n");
-        System.out.println(threadPool);
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        System.out.println("time = " + sdf.format(cal.getTime()) + "  setting the pool size: pool size = " + optimalNumberOfThreads + "\n");
         threadPool.setPoolSize(optimalNumberOfThreads);
         ;
     }
